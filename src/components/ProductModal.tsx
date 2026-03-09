@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { Check, X } from "lucide-react";
+import { Check, ShoppingCart, X } from "lucide-react";
 import type { Product } from "../types";
 
 interface ProductModalProps {
@@ -40,7 +40,7 @@ export function ProductModal({ product, onClose, onAddToCart }: ProductModalProp
                 <p className="text-xs font-extrabold uppercase tracking-[0.3em] text-brand-forest">
                   {product.category}
                 </p>
-                <h3 className="mt-4 font-display text-3xl font-extrabold text-brand-navy">
+                <h3 className="title-page mt-4 text-brand-navy">
                   {product.name}
                 </h3>
                 <p className="mt-5 text-sm leading-7 text-slate-600">{product.description}</p>
@@ -56,10 +56,11 @@ export function ProductModal({ product, onClose, onAddToCart }: ProductModalProp
                   ))}
                 </div>
                 <button
-                  className="mt-8 inline-flex items-center justify-center rounded-2xl bg-brand-navy px-5 py-4 text-xs font-extrabold uppercase tracking-[0.24em] text-white transition-all duration-300 hover:scale-[1.02] hover:bg-brand-forest focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-gold"
+                  className="mt-8 inline-flex items-center justify-center gap-2 rounded-2xl bg-brand-navy px-5 py-4 text-xs font-extrabold uppercase tracking-[0.24em] text-white transition-all duration-300 hover:scale-[1.02] hover:bg-brand-forest focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-gold"
                   onClick={() => onAddToCart(product)}
                 >
-                  Add to quote cart
+                  <ShoppingCart size={16} />
+                  Inquire Now
                 </button>
               </div>
             </div>

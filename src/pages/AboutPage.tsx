@@ -1,25 +1,46 @@
 import { motion } from "framer-motion";
-import { CheckCircle2, Shield, Workflow, Wrench } from "lucide-react";
+import {
+  BadgeCheck,
+  Globe2,
+  HeartHandshake,
+  Lightbulb,
+  ShieldCheck,
+} from "lucide-react";
 import { Metadata } from "../components/Metadata";
 import { Reveal } from "../components/Reveal";
 import { SectionHeading } from "../components/SectionHeading";
-import { siteConfig } from "../data/site";
 
-const principles = [
+const impactStats = [
+  { value: "2015", label: "Founded" },
+  { value: "1,500+", label: "Engineered Sites" },
+  { value: "12.4", label: "Clean Energy (MW)" },
+];
+
+const values = [
   {
-    title: "Engineering before sales",
-    text: "Load profiling, protection planning, and system fit come before hardware recommendations.",
-    icon: Workflow,
+    title: "Integrity",
+    text: "Honest dealings and transparent service delivery",
+    icon: ShieldCheck,
   },
   {
-    title: "Protection-led installs",
-    text: "Dafab prioritizes safe architecture, not just inverter capacity or panel count.",
-    icon: Shield,
+    title: "Quality",
+    text: "Use of reliable products and professional workmanship",
+    icon: BadgeCheck,
   },
   {
-    title: "Serviceable systems",
-    text: "Layouts, labeling, and component choice are made with maintenance and support in mind.",
-    icon: Wrench,
+    title: "Innovation",
+    text: "Smart, efficient, and future-ready energy solutions",
+    icon: Lightbulb,
+  },
+  {
+    title: "Customer Focus",
+    text: "Tailored solutions that meet real energy needs",
+    icon: HeartHandshake,
+  },
+  {
+    title: "Sustainability",
+    text: "Commitment to environmental responsibility",
+    icon: Globe2,
   },
 ];
 
@@ -27,8 +48,8 @@ export function AboutPage() {
   return (
     <>
       <Metadata
-        title="About Dafab Energies | Solar Engineering for Nigeria"
-        description="Learn how Dafab Energies approaches solar engineering, hybrid inverter systems, and long-life power infrastructure for Nigerian clients."
+        title="About Dafab Energies | Sustainable Solar Power in Nigeria"
+        description="Learn about Dafab Energies Nigeria Ltd, our mission, impact, and core engineering values powering sustainable energy across Nigeria."
         path="/about"
       />
 
@@ -42,8 +63,8 @@ export function AboutPage() {
           <Reveal>
             <SectionHeading
               eyebrow="About Dafab"
-              title="A solar business shaped by field experience, not generic catalogue selling."
-              description="Dafab Energies supports residential, commercial, and facility clients who need dependable power strategy, not guesswork."
+              title="Empowering Nigeria with Sustainable Power."
+              description="Dafab Energies Nigeria Ltd delivers reliable and affordable solar energy solutions for homes and businesses across Nigeria."
             />
           </Reveal>
 
@@ -51,23 +72,19 @@ export function AboutPage() {
             <Reveal>
               <div className="panel p-8 sm:p-10">
                 <p className="text-lg leading-8 text-slate-600">
-                  {siteConfig.shortName} was built around practical solar delivery in Nigeria: unstable
-                  grid performance, mixed load profiles, maintenance realities, and the need for systems
-                  that keep operating after installation day. The company combines product supply with site
-                  audits, commissioning discipline, and after-installation support.
+                  Founded by a solar professional with over 10 years of experience in both international
+                  and local renewable energy companies, we combine global expertise with local knowledge
+                  to provide sustainable, high-quality power solutions you can trust.
                 </p>
-                <div className="mt-8 grid gap-4">
-                  {[
-                    "Hybrid inverter deployment for homes, offices, and mixed-use properties",
-                    "Battery storage planning for uptime and lifecycle value",
-                    "Protection accessories and monitoring selected around system risk",
-                    "Installation handover focused on safety and real-world operation",
-                  ].map((item) => (
-                    <div key={item} className="flex items-start gap-3 rounded-2xl bg-brand-mist p-4 text-sm text-brand-ink">
-                      <CheckCircle2 size={18} className="mt-0.5 text-brand-forest" />
-                      <span>{item}</span>
-                    </div>
-                  ))}
+
+                <div className="mt-8 rounded-[2rem] bg-brand-navy p-6 text-white sm:p-8">
+                  <p className="text-xs font-extrabold uppercase tracking-[0.3em] text-brand-gold/90">
+                    Our Mission
+                  </p>
+                  <blockquote className="mt-4 max-w-3xl font-display text-2xl font-extrabold leading-tight sm:text-3xl">
+                    To power homes, businesses, and communities with clean, reliable, and affordable solar
+                    energy, while delivering exceptional service and long-lasting value.
+                  </blockquote>
                 </div>
               </div>
             </Reveal>
@@ -76,28 +93,57 @@ export function AboutPage() {
               <div className="panel h-full overflow-hidden">
                 <img
                   src="https://i.ibb.co/Zzcf30KY/Dafab-Energies.jpg"
-                  alt="Dafab Energies solar setup"
+                  alt="Dafab Energies solar installation team"
                   className="h-full min-h-[420px] w-full object-cover"
                 />
               </div>
             </Reveal>
           </div>
 
-          <div className="mt-12 grid gap-6 lg:grid-cols-3">
-            {principles.map((principle, index) => {
-              const Icon = principle.icon;
-              return (
-                <Reveal key={principle.title} delay={index * 0.08}>
-                  <article className="panel h-full p-8">
-                    <div className="inline-flex rounded-2xl bg-brand-sand p-3 text-brand-forest">
-                      <Icon size={24} />
-                    </div>
-                    <h3 className="mt-6 font-display text-2xl font-bold text-brand-navy">{principle.title}</h3>
-                    <p className="mt-4 text-sm leading-7 text-slate-600">{principle.text}</p>
-                  </article>
-                </Reveal>
-              );
-            })}
+          <div className="mt-12 grid gap-5 md:grid-cols-3">
+            {impactStats.map((stat, index) => (
+              <Reveal key={stat.label} delay={index * 0.08}>
+                <article className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-[0_20px_50px_rgba(15,23,42,0.06)]">
+                  <div className="h-1.5 bg-gradient-to-r from-brand-forest via-brand-gold to-brand-navy" />
+                  <div className="p-8 text-center">
+                    <p className="font-display text-5xl font-extrabold tracking-tight text-brand-navy">
+                      {stat.value}
+                    </p>
+                    <p className="mt-3 text-sm font-bold uppercase tracking-[0.26em] text-slate-500">
+                      {stat.label}
+                    </p>
+                  </div>
+                </article>
+              </Reveal>
+            ))}
+          </div>
+
+          <div className="mt-16">
+            <Reveal>
+              <SectionHeading
+                eyebrow="Dafab Engineering Values"
+                title="Our Core Values"
+                description="The operating principles behind every audit, recommendation, installation, and long-term power solution we deliver."
+              />
+            </Reveal>
+
+            <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-5">
+              {values.map((value, index) => {
+                const Icon = value.icon;
+
+                return (
+                  <Reveal key={value.title} delay={index * 0.08}>
+                    <article className="panel h-full p-6">
+                      <div className="inline-flex rounded-2xl bg-brand-sand p-3 text-brand-forest">
+                        <Icon size={22} />
+                      </div>
+                      <h3 className="title-card mt-5 text-brand-navy">{value.title}</h3>
+                      <p className="mt-3 text-sm leading-7 text-slate-600">{value.text}</p>
+                    </article>
+                  </Reveal>
+                );
+              })}
+            </div>
           </div>
         </div>
       </motion.section>

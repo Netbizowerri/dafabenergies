@@ -33,7 +33,7 @@ export function ProductCard({ product, onInspect, onAddToCart }: ProductCardProp
           ) : null}
         </div>
         <button
-          className="text-left font-display text-xl font-bold text-brand-navy transition-colors hover:text-brand-forest"
+          className="title-card text-left text-brand-navy transition-colors hover:text-brand-forest"
           onClick={() => onInspect(product)}
         >
           {product.name}
@@ -44,7 +44,7 @@ export function ProductCard({ product, onInspect, onAddToCart }: ProductCardProp
           onClick={() => onAddToCart(product)}
         >
           <ShoppingCart size={16} />
-          Add to quote cart
+          Inquire Now
         </button>
       </div>
     </article>

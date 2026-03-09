@@ -6,7 +6,7 @@ import { Navigation } from "./Navigation";
 
 export function Layout() {
   return (
-    <div className="min-h-screen bg-mesh text-brand-ink">
+    <div className="min-h-screen bg-[#fcfcfb] text-brand-ink">
       <Navigation />
       <main>
         <Outlet />

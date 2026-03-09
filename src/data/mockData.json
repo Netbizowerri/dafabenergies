@@ -1,0 +1,143 @@
+{
+  "summary": {
+    "totalInquiries": 48,
+    "activeProjects": 12,
+    "websiteVisits": 18420,
+    "pendingQuotes": 9
+  },
+  "inquiries": [
+    {
+      "id": "INQ-2401",
+      "clientName": "Adaeze Okafor",
+      "company": "Oakline Residences",
+      "service": "Hybrid inverter installation",
+      "location": "Owerri, Imo",
+      "budget": "NGN 4.2M - 5.8M",
+      "status": "Pending Quote",
+      "priority": "High",
+      "channel": "Website form",
+      "submittedAt": "2026-03-08T10:25:00Z",
+      "notes": "Needs quiet backup for duplex and home office."
+    },
+    {
+      "id": "INQ-2402",
+      "clientName": "Chinonso Eze",
+      "company": "Eze Cold Chain",
+      "service": "Battery storage system",
+      "location": "Port Harcourt, Rivers",
+      "budget": "NGN 8.5M - 10M",
+      "status": "Quoted",
+      "priority": "High",
+      "channel": "WhatsApp",
+      "submittedAt": "2026-03-07T16:40:00Z",
+      "notes": "Cold-room uptime is critical during peak outages."
+    },
+    {
+      "id": "INQ-2403",
+      "clientName": "Mary Ugochi",
+      "company": "Private residence",
+      "service": "Solar panel setup",
+      "location": "Asaba, Delta",
+      "budget": "NGN 2M - 3.5M",
+      "status": "New",
+      "priority": "Medium",
+      "channel": "Instagram DM",
+      "submittedAt": "2026-03-06T09:10:00Z",
+      "notes": "Wants phased installation with expansion-ready design."
+    },
+    {
+      "id": "INQ-2404",
+      "clientName": "Ifeanyi Nwachukwu",
+      "company": "Crestview Hotel",
+      "service": "Electrical accessories supply",
+      "location": "Aba, Abia",
+      "budget": "NGN 1.1M - 1.8M",
+      "status": "Won",
+      "priority": "Low",
+      "channel": "Referral",
+      "submittedAt": "2026-03-05T12:05:00Z",
+      "notes": "Urgent replacement of surge protection hardware."
+    },
+    {
+      "id": "INQ-2405",
+      "clientName": "Temitope Akinwale",
+      "company": "BluePeak Pharmacy",
+      "service": "Hybrid inverter installation",
+      "location": "Lagos, Nigeria",
+      "budget": "NGN 5.5M - 7M",
+      "status": "Pending Quote",
+      "priority": "High",
+      "channel": "Call request",
+      "submittedAt": "2026-03-04T14:18:00Z",
+      "notes": "Needs refrigeration backup and remote monitoring."
+    },
+    {
+      "id": "INQ-2406",
+      "clientName": "Samuel Bassey",
+      "company": "Bassey Agro Processing",
+      "service": "Battery storage system",
+      "location": "Uyo, Akwa Ibom",
+      "budget": "NGN 12M+",
+      "status": "Site Audit Scheduled",
+      "priority": "Medium",
+      "channel": "Website form",
+      "submittedAt": "2026-03-03T08:55:00Z",
+      "notes": "Three-phase expansion planned for Q2."
+    }
+  ],
+  "projects": [
+    {
+      "id": "PRJ-118",
+      "title": "12kVA hybrid backup for gated duplex",
+      "client": "Oakline Residences",
+      "stage": "Procurement",
+      "completion": 58,
+      "dueDate": "2026-03-18",
+      "systemSize": "12kVA + 14.3kWh"
+    },
+    {
+      "id": "PRJ-119",
+      "title": "Commercial cold-room resilience upgrade",
+      "client": "Eze Cold Chain",
+      "stage": "Engineering review",
+      "completion": 34,
+      "dueDate": "2026-03-24",
+      "systemSize": "20kW 3-phase + 32kWh"
+    },
+    {
+      "id": "PRJ-120",
+      "title": "Retail pharmacy backup retrofit",
+      "client": "BluePeak Pharmacy",
+      "stage": "Quote drafting",
+      "completion": 22,
+      "dueDate": "2026-03-29",
+      "systemSize": "8kVA + 16kWh"
+    }
+  ],
+  "trafficSources": [
+    {
+      "source": "Organic search",
+      "visits": 7560,
+      "conversionRate": "4.1%",
+      "delta": "+12.4%"
+    },
+    {
+      "source": "WhatsApp referrals",
+      "visits": 4280,
+      "conversionRate": "6.3%",
+      "delta": "+8.7%"
+    },
+    {
+      "source": "Instagram campaigns",
+      "visits": 3110,
+      "conversionRate": "3.6%",
+      "delta": "+5.2%"
+    },
+    {
+      "source": "Direct visits",
+      "visits": 3470,
+      "conversionRate": "5.4%",
+      "delta": "+3.9%"
+    }
+  ]
+}

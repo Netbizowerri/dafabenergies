@@ -4,7 +4,7 @@
 
 :root {
   color: #17324d;
-  background: #f7faf7;
+  background: #fcfcfb;
   font-family: "Manrope", sans-serif;
 }
 
@@ -16,9 +16,8 @@ body {
   margin: 0;
   min-width: 320px;
   background:
-    radial-gradient(circle at top, rgba(230, 171, 51, 0.18), transparent 28%),
-    radial-gradient(circle at 85% 12%, rgba(15, 122, 79, 0.16), transparent 24%),
-    #f7faf7;
+    radial-gradient(circle at 1px 1px, rgba(6, 41, 77, 0.08) 1px, transparent 0) 0 0 / 26px 26px,
+    #fcfcfb;
   color: #17324d;
 }
 
@@ -44,8 +43,30 @@ select {
     @apply rounded-[2rem] border border-white/70 bg-white/85 shadow-lg shadow-slate-200/35 backdrop-blur-sm;
   }
 
+  .dot-surface {
+    background:
+      radial-gradient(circle at 1px 1px, rgba(6, 41, 77, 0.08) 1px, transparent 0) 0 0 / 26px 26px,
+      #fcfcfb;
+  }
+
   .field {
     @apply w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-brand-ink outline-none transition focus:border-brand-forest focus:ring-4 focus:ring-brand-forest/10;
+  }
+
+  .title-hero {
+    @apply font-display text-[3.2rem] font-extrabold leading-[0.96] sm:text-[4.4rem] lg:text-[5.8rem];
+  }
+
+  .title-page {
+    @apply font-display text-3xl font-extrabold tracking-tight sm:text-4xl;
+  }
+
+  .title-section {
+    @apply font-display text-[2rem] font-extrabold tracking-tight sm:text-[2.5rem];
+  }
+
+  .title-card {
+    @apply font-display text-xl font-extrabold leading-tight;
   }
 
   .btn-primary {

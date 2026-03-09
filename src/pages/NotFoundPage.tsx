@@ -18,7 +18,7 @@ export function NotFoundPage() {
       >
         <div className="mx-auto max-w-4xl panel p-12 text-center">
           <p className="text-xs font-extrabold uppercase tracking-[0.3em] text-brand-forest/70">404</p>
-          <h1 className="mt-4 font-display text-4xl font-extrabold text-brand-navy">This route does not exist.</h1>
+          <h1 className="title-page mt-4 text-brand-navy">This route does not exist.</h1>
           <p className="mt-4 text-sm text-slate-600">
             Use the navigation to return to the homepage, browse the hardware store, or contact Dafab.
           </p>

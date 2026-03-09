@@ -38,18 +38,10 @@ export function Navigation() {
 
   return (
     <>
-      <header className="sticky top-0 z-[80] border-b border-white/70 bg-white/80 backdrop-blur-xl">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
-          <Link to="/" className="flex items-center gap-3">
-            <div className="rounded-2xl bg-white p-2 shadow-md">
-              <img src={siteConfig.logo} alt={siteConfig.shortName} className="h-12 w-auto sm:h-14" />
-            </div>
-            <div className="hidden sm:block">
-              <p className="font-display text-lg font-bold text-brand-navy">{siteConfig.shortName}</p>
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-brand-forest/70">
-                Solar engineering
-              </p>
-            </div>
+      <header className="sticky top-0 z-[80] border-b border-slate-200 bg-white shadow-[0_4px_16px_rgba(15,23,42,0.05)]">
+        <div className="mx-auto flex max-w-[1840px] items-center justify-between px-6 py-6 lg:px-14">
+          <Link to="/" className="flex items-center">
+            <img src={siteConfig.logo} alt={siteConfig.shortName} className="h-14 w-auto sm:h-16" />
           </Link>
 
           <nav className="hidden items-center gap-8 md:flex">
@@ -58,8 +50,10 @@ export function Navigation() {
                 key={item.href}
                 to={item.href}
                 className={({ isActive }) =>
-                  `text-xs font-extrabold uppercase tracking-[0.24em] transition-colors ${
-                    isActive ? "text-brand-forest" : "text-brand-navy/70 hover:text-brand-navy"
+                  `border-b-2 pb-1 text-xs font-extrabold uppercase tracking-[0.24em] transition-colors ${
+                    isActive
+                      ? "border-brand-gold text-brand-forest"
+                      : "border-transparent text-brand-navy/65 hover:text-brand-navy"
                   }`
                 }
               >
@@ -71,7 +65,7 @@ export function Navigation() {
           <div className="hidden items-center gap-3 md:flex">
             <Link
               to="/quote-cart"
-              className="relative rounded-full border border-brand-navy/10 bg-brand-navy p-3 text-white transition-all hover:scale-[1.03] hover:bg-brand-forest focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-gold"
+              className="relative rounded-full bg-brand-navy p-4 text-brand-gold shadow-lg shadow-slate-300/40 transition-all hover:scale-[1.03] hover:bg-brand-forest focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-gold"
               aria-label="Open quote cart"
             >
               <ShoppingCart size={18} />
@@ -83,7 +77,7 @@ export function Navigation() {
             </Link>
             <Link
               to="/booking"
-              className="rounded-full bg-brand-forest px-5 py-3 text-xs font-extrabold uppercase tracking-[0.24em] text-white transition-all hover:scale-[1.02] hover:bg-brand-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-gold"
+              className="rounded-full bg-brand-forest px-7 py-4 text-xs font-extrabold uppercase tracking-[0.24em] text-white shadow-lg shadow-slate-300/40 transition-all hover:scale-[1.02] hover:bg-brand-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-gold"
             >
               Book audit
             </Link>
@@ -92,7 +86,7 @@ export function Navigation() {
           <div className="flex items-center gap-3 md:hidden">
             <Link
               to="/quote-cart"
-              className="relative rounded-full bg-brand-navy p-3 text-white"
+              className="relative rounded-full bg-brand-navy p-3 text-brand-gold"
               aria-label="Open quote cart"
             >
               <ShoppingCart size={18} />

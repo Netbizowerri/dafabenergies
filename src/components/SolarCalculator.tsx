@@ -32,7 +32,7 @@ export function SolarCalculator() {
           <p className="text-xs font-extrabold uppercase tracking-[0.28em] text-brand-gold">
             Quick sizing tool
           </p>
-          <h3 className="mt-3 font-display text-3xl font-extrabold">Estimate a sensible solar starting point.</h3>
+          <h3 className="title-section mt-3">Estimate a sensible solar starting point.</h3>
           <p className="mt-4 max-w-xl text-sm leading-7 text-slate-300">
             This is a planning tool for enquiries, not a final engineering design. Dafab still validates
             cable sizes, surge protection, and actual appliance profiles during an audit.

@@ -1,9 +1,8 @@
 import { motion } from "framer-motion";
-import { Phone, ShieldCheck } from "lucide-react";
+import { Building2, MessageCircle, Phone, ShieldCheck } from "lucide-react";
 import { FormEvent, useState } from "react";
 import { Metadata } from "../components/Metadata";
 import { Reveal } from "../components/Reveal";
-import { SectionHeading } from "../components/SectionHeading";
 import { siteConfig } from "../data/site";
 import { submitToFormspree } from "../lib/formspree";
 import { isValidEmail, isValidPhone, sanitizeMultiline, sanitizePhone, sanitizeText } from "../lib/validation";
@@ -85,25 +84,55 @@ export function ContactPage() {
       >
         <div className="mx-auto max-w-7xl">
           <Reveal>
-            <SectionHeading
-              eyebrow="Contact"
-              title="Send your energy requirement through a secure Formspree workflow."
-              description="Use this form for project enquiries, hardware questions, maintenance support, or planning discussions."
-            />
+            <h1 className="title-page text-brand-navy">CONTACT US</h1>
           </Reveal>
 
           <div className="mt-10 grid gap-6 lg:grid-cols-[0.92fr_1.08fr]">
             <Reveal>
               <div className="panel p-8">
-                <div className="rounded-[1.5rem] bg-brand-mist p-5">
-                  <p className="text-xs font-extrabold uppercase tracking-[0.28em] text-brand-forest/70">
-                    Direct contact
-                  </p>
-                  <a href={siteConfig.phoneHref} className="mt-4 inline-flex items-center gap-3 text-lg font-bold text-brand-navy">
-                    <Phone size={18} className="text-brand-forest" />
-                    {siteConfig.phone}
-                  </a>
-                  <p className="mt-3 text-sm leading-7 text-slate-600">{siteConfig.headquarters}</p>
+                <div className="space-y-4">
+                  <div className="rounded-[1.5rem] bg-brand-mist p-5">
+                    <p className="text-xs font-extrabold uppercase tracking-[0.28em] text-brand-forest/70">
+                      Corporate HQ
+                    </p>
+                    <div className="mt-4 inline-flex items-center gap-3 text-lg font-bold text-brand-navy">
+                      <Building2 size={18} className="text-brand-forest" />
+                      {siteConfig.headquarters}
+                    </div>
+                  </div>
+
+                  <div className="rounded-[1.5rem] bg-brand-mist p-5">
+                    <p className="text-xs font-extrabold uppercase tracking-[0.28em] text-brand-forest/70">
+                      Direct Engineering Line
+                    </p>
+                    <div className="mt-4 flex flex-col gap-3">
+                      {siteConfig.engineeringLines.map((line, index) => (
+                        <a
+                          key={line}
+                          href={siteConfig.engineeringLineHrefs[index]}
+                          className="inline-flex items-center gap-3 text-lg font-bold text-brand-navy"
+                        >
+                          <Phone size={18} className="text-brand-forest" />
+                          {line}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="rounded-[1.5rem] bg-brand-mist p-5">
+                    <p className="text-xs font-extrabold uppercase tracking-[0.28em] text-brand-forest/70">
+                      WhatsApp Support
+                    </p>
+                    <a
+                      href={siteConfig.whatsappHref}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="mt-4 inline-flex items-center gap-3 text-lg font-bold text-brand-navy"
+                    >
+                      <MessageCircle size={18} className="text-brand-forest" />
+                      {siteConfig.whatsappNumber}
+                    </a>
+                  </div>
                 </div>
                 <div className="mt-6 rounded-[1.5rem] bg-brand-navy p-5 text-white">
                   <div className="flex items-start gap-3">

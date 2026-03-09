@@ -1,13 +1,14 @@
 import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Metadata } from "../components/Metadata";
 import { ProductCard } from "../components/ProductCard";
 import { ProductModal } from "../components/ProductModal";
 import { Reveal } from "../components/Reveal";
 import { products, services, siteConfig } from "../data/site";
 import { useCart } from "../context/CartContext";
-import { useState } from "react";
 import type { Product } from "../types";
 
 export function ServiceDetailPage() {
@@ -18,6 +19,13 @@ export function ServiceDetailPage() {
   );
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const { addItem } = useCart();
+  const navigate = useNavigate();
+
+  function handleInquire(product: Product) {
+    addItem(product);
+    setSelectedProduct(null);
+    navigate("/quote-cart");
+  }
 
   if (!service) {
     return (
@@ -28,7 +36,7 @@ export function ServiceDetailPage() {
           noindex
         />
         <div className="mx-auto max-w-4xl panel p-10 text-center">
-          <h1 className="font-display text-4xl font-extrabold text-brand-navy">Service not found</h1>
+          <h1 className="title-page text-brand-navy">Service not found</h1>
           <p className="mt-4 text-sm text-slate-600">
             The requested service page is missing or no longer available.
           </p>
@@ -62,7 +70,7 @@ export function ServiceDetailPage() {
                 <p className="text-xs font-extrabold uppercase tracking-[0.3em] text-brand-forest/70">
                   {service.kicker}
                 </p>
-                <h1 className="mt-4 font-display text-4xl font-extrabold text-brand-navy sm:text-5xl">
+                <h1 className="title-page mt-4 text-brand-navy">
                   {service.title}
                 </h1>
                 <p className="mt-5 text-base leading-8 text-slate-600">{service.description}</p>
@@ -100,7 +108,7 @@ export function ServiceDetailPage() {
                   <p className="text-xs font-extrabold uppercase tracking-[0.3em] text-brand-forest/70">
                     Related hardware
                   </p>
-                  <h2 className="mt-3 font-display text-3xl font-extrabold text-brand-navy">
+                  <h2 className="title-section mt-3 text-brand-navy">
                     Components often paired with this service.
                   </h2>
                 </div>
@@ -112,7 +120,11 @@ export function ServiceDetailPage() {
             <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
               {relatedProducts.slice(0, 4).map((product, index) => (
                 <Reveal key={product.id} delay={index * 0.06}>
-                  <ProductCard product={product} onInspect={setSelectedProduct} onAddToCart={addItem} />
+                  <ProductCard
+                    product={product}
+                    onInspect={setSelectedProduct}
+                    onAddToCart={handleInquire}
+                  />
                 </Reveal>
               ))}
             </div>
@@ -120,7 +132,11 @@ export function ServiceDetailPage() {
         </div>
       </motion.section>
 
-      <ProductModal product={selectedProduct} onClose={() => setSelectedProduct(null)} onAddToCart={addItem} />
+      <ProductModal
+        product={selectedProduct}
+        onClose={() => setSelectedProduct(null)}
+        onAddToCart={handleInquire}
+      />
     </>
   );
 }
